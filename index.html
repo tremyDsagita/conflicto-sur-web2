@@ -57,7 +57,16 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     }
 
-    button { background: #0070f3; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    button { 
+      background: #0070f3; 
+      color: white; 
+      border: none; 
+      padding: 10px 15px; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      font-weight: bold; 
+      transition: background 0.2s;
+    }
     button:hover { background: #0051a8; }
     
     input[type="text"], textarea { 
@@ -70,9 +79,17 @@
       box-sizing: border-box; 
     }
     input[type="text"] { margin-bottom: 10px; }
-    textarea { height: 80px; margin-top: 5px; }
+    textarea { height: 80px; margin-top: 5px; resize: vertical; }
     
-    .download-box { display: none; margin-top: 15px; background: #1b3d2f; padding: 15px; border-radius: 5px; text-align: center; border: 1px solid #2e7d32; }
+    .download-box { 
+      display: none; 
+      margin-top: 15px; 
+      background: #1b3d2f; 
+      padding: 15px; 
+      border-radius: 5px; 
+      text-align: center; 
+      border: 1px solid #2e7d32; 
+    }
     .download-btn {
       display: inline-block;
       margin: 8px 5px;
@@ -82,7 +99,7 @@
       font-weight: bold;
       text-decoration: none;
       border-radius: 6px;
-      transition: background 0.2s;
+      transition: background 0.2s, color 0.2s;
     }
     .download-btn:hover { background-color: #34a853; color: #fff; }
 
@@ -100,6 +117,7 @@
       text-decoration: none;
       font-weight: bold;
       margin-top: 10px;
+      transition: background 0.2s;
     }
     .yt-btn:hover { background-color: #cc0000; }
 
@@ -173,17 +191,20 @@
 </head>
 <body>
 
+  <!-- Panel de Música Flotante -->
   <div class="music-panel">
     <button id="btn-musica" class="music-btn">🔊 Música</button>
     <input type="range" id="vol-musica" class="music-slider" min="0" max="1" step="0.05" value="0.5" title="Volumen">
   </div>
   <audio id="reproductor-bg"></audio>
 
+  <!-- Encabezado Principal -->
   <div class="header-title-container">
     <h1 class="main-title">Conflicto Sur Mod</h1>
     <h2 class="sub-title">Campo de Batalla</h2>
   </div>
 
+  <!-- Reseña Completa -->
   <div class="card review-section">
     <h2>Reseña del mod Conflicto Sur para Battlefield 2</h2>
     <p>Conflicto Sur es un proyecto de conversión total desarrollado para Battlefield 2 que propone una interesante reinterpretación del clásico juego de combate, trasladando su escenario de guerra desde los conflictos tradicionales hacia un contexto ficticio inspirado en América del Sur.</p>
@@ -206,6 +227,7 @@
     <p>En definitiva, Conflicto Sur es un proyecto que busca llevar la experiencia de Battlefield 2 a un escenario poco habitual dentro del modding del juego: una Sudamérica ficticia convertida en escenario de conflictos militares, ofreciendo a los jugadores una perspectiva regional y personalizada del clásico título de DICE.</p>
   </div>
 
+  <!-- Galería de Capturas -->
   <div class="card">
     <h3 style="text-align: center; margin-top: 0; margin-bottom: 20px; color: #ffca28;">📷 Galería de Capturas del Mod</h3>
     <div class="gallery-grid">
@@ -227,6 +249,7 @@
     </div>
   </div>
 
+  <!-- Video de YouTube -->
   <div class="card" style="text-align: center;">
     <h3 style="margin-top: 0; color: #ffca28;">🎬 Video Demostrativo: Conflicto Sur 1.2.3 Mod</h3>
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-top: 15px;">
@@ -241,17 +264,20 @@
     </div>
   </div>
 
+  <!-- Call to Action YouTube -->
   <div class="card yt-card">
     <h3 style="margin-top:0;">🔴 ¡Apoya el Proyecto!</h3>
     <p>Suscríbete a mi canal de YouTube, dale "Me Gusta" y deja tus comentarios en los videos. ¡Tu apoyo es fundamental para seguir desarrollando y mejorando el mod de Conflicto Sur!</p>
     <a href="https://www.youtube.com/@caelmiranda9845" target="_blank" class="yt-btn">▶️ Ir al Canal de YouTube</a>
   </div>
 
+  <!-- Likes y Visitas -->
   <div class="card">
     <p>👀 Visitas: <span id="val-visitas">0</span> | ❤️ Likes: <span id="val-likes">0</span></p>
     <button id="btn-like">Dar Me Gusta ❤️</button>
   </div>
 
+  <!-- Zona de Descargas -->
   <div class="card">
     <h3>Descargar Archivos</h3>
     <p>Resuelve el captcha para desbloquear las opciones de descarga:</p>
@@ -271,6 +297,7 @@
     </div>
   </div>
 
+  <!-- Sección de Comentarios -->
   <div class="card">
     <h3>Comentarios</h3>
     <input type="text" id="txt-alias" placeholder="Tu Nombre o Alias (ej. Soldado123)...">
@@ -280,11 +307,13 @@
   </div>
 
   <script>
+    // Configuración de Supabase
     const SUPABASE_URL = 'https://peijgvzxbdrwsohgfozd.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlaWpndnp4YmRyd3NvaGdmb3pdIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5MjIxNzEsImV4cCI6MjEwMjQ5ODE3MX0.L2JQykr9HP81BnNgoZw3hDMVMaoNtWUaqA6H5AzDtF0'; 
     
     const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+    // Sistema de Música
     const canciones = [
       'audio/pista1.mp3',
       'audio/pista2.mp3',
@@ -299,10 +328,13 @@
 
     function reproducirPista(index) {
       if (index >= canciones.length) indiceAudio = 0;
+      else indiceAudio = index;
+
       reproductor.src = canciones[indiceAudio];
       reproductor.play().then(() => {
         btnMusica.innerText = '🔊 Música';
-      }).catch(() => {
+      }).catch((err) => {
+        console.log("Autoplay bloqueado por el navegador hasta que interactúes con la página.", err);
         btnMusica.innerText = '🔇 Música';
       });
     }
@@ -332,23 +364,24 @@
       reproductor.volume = parseFloat(e.target.value);
       if (reproductor.volume === 0) {
         btnMusica.innerText = '🔇 Música';
-      } else if (reproductor.paused) {
-        btnMusica.innerText = '🔇 Música';
-      } else {
+      } else if (!reproductor.paused) {
         btnMusica.innerText = '🔊 Música';
       }
     };
 
     volMusica.onclick = (e) => e.stopPropagation();
 
+    // Primer clic en la página activa la música de fondo si aún no se reproduce
     document.body.addEventListener('click', () => {
-      if (!reproductor.src) {
+      if (!reproductor.src || reproductor.paused) {
         reproducirPista(0);
       }
     }, { once: true });
 
+    // Variables Globales de Estadísticas
     let numVisitas = 0;
     let numLikes = 0;
+    let idLikesRegistro = 'likes'; // ID por defecto para actualizar en base de datos
 
     async function initPagina() {
       try {
@@ -365,6 +398,7 @@
             }
             if (idLimpio === 'likes') {
               numLikes = valor;
+              idLikesRegistro = item.id; // Guarda la clave exacta por si tiene espacios en la DB
               document.getElementById('val-likes').innerText = numLikes;
             }
           });
@@ -375,24 +409,28 @@
       cargarComentarios();
     }
 
+    // Evento para incrementar Likes
     document.getElementById('btn-like').onclick = async () => {
       numLikes++;
       document.getElementById('val-likes').innerText = numLikes;
 
-      const { error } = await db.from('estadisticas').update({ cantidad: numLikes }).eq('id', 'likes');
+      const { error } = await db.from('estadisticas').update({ cantidad: numLikes }).eq('id', idLikesRegistro);
       if (error) {
         console.error("Error al guardar like:", error);
       }
     };
 
+    // Función para Cargar Comentarios
     async function cargarComentarios() {
       const { data, error } = await db.from('comentarios').select('*').order('creado_en', { ascending: false });
       const contenedor = document.getElementById('lista-comentarios');
       contenedor.innerHTML = '';
       if (data && data.length > 0) {
         data.forEach(c => {
+          const autorSeguro = (c.autor || 'Anónimo').replace(/</g, "&lt;").replace(/>/g, "&gt;");
+          const textoSeguro = (c.contenido || '').replace(/</g, "&lt;").replace(/>/g, "&gt;");
           contenedor.innerHTML += `<div style="border-bottom:1px solid #333; padding:10px 0;">
-            <strong style="color:#0070f3;">${c.autor || 'Anónimo'}:</strong> <span style="color:#ddd;">${c.contenido}</span>
+            <strong style="color:#0070f3;">${autorSeguro}:</strong> <span style="color:#ddd;">${textoSeguro}</span>
           </div>`;
         });
       } else {
@@ -400,6 +438,7 @@
       }
     }
 
+    // Evento para Publicar Comentario
     document.getElementById('btn-comentar').onclick = async () => {
       const alias = document.getElementById('txt-alias').value.trim() || 'Anónimo';
       const texto = document.getElementById('txt-comentario').value.trim();
@@ -414,6 +453,7 @@
       }
     };
 
+    // Callback de reCAPTCHA
     function captchaResuelto(token) {
       if (token) {
         document.getElementById('box-descarga').style.display = 'block';
