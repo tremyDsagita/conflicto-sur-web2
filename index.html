@@ -27,7 +27,6 @@
       margin-bottom: 30px;
     }
 
-    /* Título principal solo "Conflicto Sur Mod" en blanco */
     h1.main-title {
       color: #ffffff;
       font-size: 2.5em;
@@ -37,9 +36,8 @@
       font-weight: bold;
     }
 
-    /* Subtítulo "Campo de Batalla" en Verde Militar */
     h2.sub-title {
-      color: #6b8e23; /* Verde Militar Táctico */
+      color: #6b8e23;
       font-size: 1.4em;
       margin-top: 5px;
       margin-bottom: 0;
@@ -49,7 +47,6 @@
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95);
     }
 
-    /* Tarjetas con efecto translúcido / cristal */
     .card { 
       background: rgba(30, 30, 30, 0.85); 
       padding: 25px; 
@@ -89,7 +86,6 @@
     }
     .download-btn:hover { background-color: #34a853; color: #fff; }
 
-    /* Tarjeta de YouTube */
     .yt-card {
       background: rgba(180, 0, 0, 0.25);
       border: 1px solid rgba(255, 0, 0, 0.4);
@@ -107,7 +103,6 @@
     }
     .yt-btn:hover { background-color: #cc0000; }
 
-    /* Estilos para la Reseña */
     .review-section h2 {
       color: #0070f3;
       border-bottom: 2px solid #0070f3;
@@ -125,7 +120,6 @@
       margin-bottom: 15px;
     }
 
-    /* Galería */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -144,7 +138,6 @@
       border-color: #0070f3;
     }
 
-    /* Panel Flotante de Control de Música */
     .music-panel {
       position: fixed;
       bottom: 20px;
@@ -180,20 +173,17 @@
 </head>
 <body>
 
-  <!-- Panel Flotante para Silenciar, Activar y Controlar Volumen -->
   <div class="music-panel">
     <button id="btn-musica" class="music-btn">🔊 Música</button>
     <input type="range" id="vol-musica" class="music-slider" min="0" max="1" step="0.05" value="0.5" title="Volumen">
   </div>
   <audio id="reproductor-bg"></audio>
 
-  <!-- ENCABEZADO: TÍTULO EN BLANCO Y SEGUNDO TÍTULO VERDE MILITAR -->
   <div class="header-title-container">
     <h1 class="main-title">Conflicto Sur Mod</h1>
     <h2 class="sub-title">Campo de Batalla</h2>
   </div>
 
-  <!-- 1. RESEÑA DEL MOD Y CREADOR -->
   <div class="card review-section">
     <h2>Reseña del mod Conflicto Sur para Battlefield 2</h2>
     <p>Conflicto Sur es un proyecto de conversión total desarrollado para Battlefield 2 que propone una interesante reinterpretación del clásico juego de combate, trasladando su escenario de guerra desde los conflictos tradicionales hacia un contexto ficticio inspirado en América del Sur.</p>
@@ -212,11 +202,10 @@
 
     <h3>Conclusión</h3>
     <p>Conflicto Sur representa una propuesta singular dentro del universo de modificaciones de Battlefield 2. Su combinación de facciones latinoamericanas, mapas ficticios inspirados en Sudamérica, equipamiento personalizado, camuflajes y escenarios diurnos y nocturnos le proporciona una identidad diferenciada.</p>
-    <p>El proyecto también refleja el proceso de aprendizaje y evolución de su creador, Miranda Tremy (TremyDsagita), quien previamente trabajó con otros mods y mapas antes de desarrollar su propia conversión total.</p>
+    <p>El proyecto también refleja el proceso de aprendizaje y evolución de su creador, Miranda Tremy (TremyDsagita), quien previamente worked con otros mods y mapas antes de desarrollar su propia conversión total.</p>
     <p>En definitiva, Conflicto Sur es un proyecto que busca llevar la experiencia de Battlefield 2 a un escenario poco habitual dentro del modding del juego: una Sudamérica ficticia convertida en escenario de conflictos militares, ofreciendo a los jugadores una perspectiva regional y personalizada del clásico título de DICE.</p>
   </div>
 
-  <!-- 2. GALERÍA DE 15 IMÁGENES -->
   <div class="card">
     <h3 style="text-align: center; margin-top: 0; margin-bottom: 20px; color: #ffca28;">📷 Galería de Capturas del Mod</h3>
     <div class="gallery-grid">
@@ -238,7 +227,6 @@
     </div>
   </div>
 
-  <!-- 3. VIDEO INCRUSTADO DE YOUTUBE -->
   <div class="card" style="text-align: center;">
     <h3 style="margin-top: 0; color: #ffca28;">🎬 Video Demostrativo: Conflicto Sur 1.2.3 Mod</h3>
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-top: 15px;">
@@ -253,43 +241,37 @@
     </div>
   </div>
 
-  <!-- 4. ENLACE DEL CANAL DE YOUTUBE -->
   <div class="card yt-card">
     <h3 style="margin-top:0;">🔴 ¡Apoya el Proyecto!</h3>
     <p>Suscríbete a mi canal de YouTube, dale "Me Gusta" y deja tus comentarios en los videos. ¡Tu apoyo es fundamental para seguir desarrollando y mejorando el mod de Conflicto Sur!</p>
     <a href="https://www.youtube.com/@caelmiranda9845" target="_blank" class="yt-btn">▶️ Ir al Canal de YouTube</a>
   </div>
 
-  <!-- 5. VISITAS Y LIKES -->
   <div class="card">
     <p>👀 Visitas: <span id="val-visitas">0</span> | ❤️ Likes: <span id="val-likes">0</span></p>
     <button id="btn-like">Dar Me Gusta ❤️</button>
   </div>
 
-  <!-- 6. SECCIÓN DE DESCARGA CON CAPTCHA -->
   <div class="card">
     <h3>Descargar Archivos</h3>
     <p>Resuelve el captcha para desbloquear las opciones de descarga:</p>
     
-    <!-- Site Key configurada -->
-    <div class="g-recaptcha" data-sitekey="6LfP3YktAAAAAE4ppY-5WsXFAV6Y4K9CIPW1Tz1Y" data-callback="captchaResuelto"></div>
+    <!-- Clave de sitio reCAPTCHA actualizada -->
+    <div class="g-recaptcha" data-sitekey="6LfJHY0tAAAAAHJpb6F9O__JbSLPByBhXYARGMxB" data-callback="captchaResuelto"></div>
 
     <div id="box-descarga" class="download-box">
       <p>¡Verificación completada con éxito! Selecciona tu versión:</p>
       
-      <!-- Opción 1: Para Battlefield 2 instalado -->
       <a href="https://drive.google.com/file/d/1CEFhE_VNMaGfO-jxI_FsZfzvXzopDvYN/view" target="_blank" class="download-btn">
         📦 Descargar Mod (Para agregar a BF2 instalado)
       </a>
 
-      <!-- Opción 2: Versión Portable Standalone -->
       <a href="https://drive.google.com/file/d/1f0fHK1XcDQzFYszrFsfS7FUiKsi6l847/view?pli=1" target="_blank" class="download-btn">
         🚀 Descargar Versión Portable (No requiere BF2)
       </a>
     </div>
   </div>
 
-  <!-- 7. SECCIÓN DE COMENTARIOS CON ALIAS -->
   <div class="card">
     <h3>Comentarios</h3>
     <input type="text" id="txt-alias" placeholder="Tu Nombre o Alias (ej. Soldado123)...">
@@ -300,11 +282,11 @@
 
   <script>
     const SUPABASE_URL = 'https://peijgvzxbdrwsohgfozd.supabase.co';
-    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlaWpndnp4YmRyd3NvaGdmb3pdIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5MjIxNzEsImV4cCI6MjEwMjQ5ODE3MX0.L2JQykr9HP81BnNgoZw3hDMVMaoNtWUaqA6H5AzDtF0';
+    // Pega aquí la clave anon pública obtenida en Supabase -> Project Settings -> API
+    const SUPABASE_KEY = 'TU_NUEVA_CLAVE_ANON_AQUI'; 
     
     const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    // Configuración del Reproductor y Controlador de Volumen
     const canciones = [
       'audio/pista1.mp3',
       'audio/pista2.mp3',
@@ -315,7 +297,6 @@
     const btnMusica = document.getElementById('btn-musica');
     const volMusica = document.getElementById('vol-musica');
 
-    // Nivel inicial de volumen (50%)
     reproductor.volume = 0.5;
 
     function reproducirPista(index) {
@@ -328,13 +309,11 @@
       });
     }
 
-    // Al terminar una pista, pasa a la siguiente
     reproductor.onended = () => {
       indiceAudio++;
-      reproductorPista(indiceAudio);
+      reproducirPista(indiceAudio);
     };
 
-    // Control manual para reproducir / pausar
     btnMusica.onclick = (e) => {
       e.stopPropagation();
       if (!reproductor.src) {
@@ -350,7 +329,6 @@
       }
     };
 
-    // Ajustar el volumen dinámicamente al mover el slider
     volMusica.oninput = (e) => {
       e.stopPropagation();
       reproductor.volume = parseFloat(e.target.value);
@@ -365,7 +343,6 @@
 
     volMusica.onclick = (e) => e.stopPropagation();
 
-    // Autoplay al interactuar por primera vez con la página
     document.body.addEventListener('click', () => {
       if (!reproductor.src) {
         reproducirPista(0);
@@ -375,7 +352,6 @@
     let numVisitas = 0;
     let numLikes = 0;
 
-    // 1. Cargar Estadísticas con manejo robusto
     async function initPagina() {
       try {
         const { data, error } = await db.from('estadisticas').select('*');
@@ -401,7 +377,6 @@
       cargarComentarios();
     }
 
-    // 2. Dar Me Gusta
     document.getElementById('btn-like').onclick = async () => {
       numLikes++;
       document.getElementById('val-likes').innerText = numLikes;
@@ -412,7 +387,6 @@
       }
     };
 
-    // 3. Comentarios
     async function cargarComentarios() {
       const { data, error } = await db.from('comentarios').select('*').order('creado_en', { ascending: false });
       const contenedor = document.getElementById('lista-comentarios');
@@ -442,7 +416,6 @@
       }
     };
 
-    // 4. Desbloqueo tras resolver Captcha
     function captchaResuelto(token) {
       if (token) {
         document.getElementById('box-descarga').style.display = 'block';
