@@ -21,35 +21,10 @@
       line-height: 1.6;
     }
 
-    /* Estilos del Encabezado Principal */
-    .header-title-container {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+    .header-title-container { text-align: center; margin-bottom: 30px; }
+    h1.main-title { color: #ffffff; font-size: 2.5em; margin: 0; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9); font-weight: bold; }
+    h2.sub-title { color: #6b8e23; font-size: 1.4em; margin-top: 5px; margin-bottom: 0; letter-spacing: 3px; text-transform: uppercase; font-weight: bold; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95); }
 
-    /* Título principal solo "Conflicto Sur Mod" en blanco */
-    h1.main-title {
-      color: #ffffff;
-      font-size: 2.5em;
-      margin: 0;
-      padding: 0;
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9), 0px 0px 20px rgba(0, 0, 0, 0.9);
-      font-weight: bold;
-    }
-
-    /* Subtítulo "Campo de Batalla" en Verde Militar */
-    h2.sub-title {
-      color: #6b8e23; /* Verde Militar Táctico */
-      font-size: 1.4em;
-      margin-top: 5px;
-      margin-bottom: 0;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: bold;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95);
-    }
-
-    /* Tarjetas con efecto translúcido / cristal */
     .card { 
       background: rgba(30, 30, 30, 0.85); 
       padding: 25px; 
@@ -85,66 +60,19 @@
       font-weight: bold;
       text-decoration: none;
       border-radius: 6px;
-      transition: background 0.2s;
     }
     .download-btn:hover { background-color: #34a853; color: #fff; }
 
-    /* Tarjeta de YouTube */
-    .yt-card {
-      background: rgba(180, 0, 0, 0.25);
-      border: 1px solid rgba(255, 0, 0, 0.4);
-      text-align: center;
-    }
-    .yt-btn {
-      display: inline-block;
-      background-color: #ff0000;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    .yt-btn:hover { background-color: #cc0000; }
+    .yt-card { background: rgba(180, 0, 0, 0.25); border: 1px solid rgba(255, 0, 0, 0.4); text-align: center; }
+    .yt-btn { display: inline-block; background-color: #ff0000; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px; }
 
-    /* Estilos para la Reseña */
-    .review-section h2 {
-      color: #0070f3;
-      border-bottom: 2px solid #0070f3;
-      padding-bottom: 5px;
-      margin-top: 0;
-    }
-    .review-section h3 {
-      color: #ffca28;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-    .review-section p {
-      color: #e0e0e0;
-      text-align: justify;
-      margin-bottom: 15px;
-    }
+    .review-section h2 { color: #0070f3; border-bottom: 2px solid #0070f3; padding-bottom: 5px; margin-top: 0; }
+    .review-section h3 { color: #ffca28; margin-top: 20px; margin-bottom: 10px; }
+    .review-section p { color: #e0e0e0; text-align: justify; margin-bottom: 15px; }
 
-    /* Galería */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 12px;
-    }
-    .gallery-img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid #444;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-    .gallery-img:hover {
-      transform: scale(1.03);
-      border-color: #0070f3;
-    }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+    .gallery-img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; border: 1px solid #444; }
 
-    /* Panel Flotante de Control de Música */
     .music-panel {
       position: fixed;
       bottom: 20px;
@@ -161,62 +89,33 @@
       gap: 10px;
       backdrop-filter: blur(5px);
     }
-    .music-btn {
-      background: transparent;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      font-weight: bold;
-      padding: 0;
-      display: flex;
-      align-items: center;
-    }
-    .music-slider {
-      width: 80px;
-      accent-color: #ffca28;
-      cursor: pointer;
-    }
+    .music-btn { background: transparent; border: none; color: #fff; cursor: pointer; font-weight: bold; padding: 0; }
+    .music-slider { width: 80px; accent-color: #ffca28; cursor: pointer; }
   </style>
 </head>
 <body>
 
-  <!-- Panel Flotante para Silenciar, Activar y Controlar Volumen -->
   <div class="music-panel">
     <button id="btn-musica" class="music-btn">🔊 Música</button>
     <input type="range" id="vol-musica" class="music-slider" min="0" max="1" step="0.05" value="0.5" title="Volumen">
   </div>
   <audio id="reproductor-bg"></audio>
 
-  <!-- ENCABEZADO: TÍTULO EN BLANCO Y SEGUNDO TÍTULO VERDE MILITAR -->
   <div class="header-title-container">
     <h1 class="main-title">Conflicto Sur Mod</h1>
     <h2 class="sub-title">Campo de Batalla</h2>
   </div>
 
-  <!-- 1. RESEÑA DEL MOD Y CREADOR -->
+  <!-- 1. RESEÑA -->
   <div class="card review-section">
     <h2>Reseña del mod Conflicto Sur para Battlefield 2</h2>
     <p>Conflicto Sur es un proyecto de conversión total desarrollado para Battlefield 2 que propone una interesante reinterpretación del clásico juego de combate, trasladando su escenario de guerra desde los conflictos tradicionales hacia un contexto ficticio inspirado en América del Sur.</p>
-    <p>El mod destaca por incorporar fuerzas armadas latinoamericanas, equipamiento militar adaptado a la región, nuevos camuflajes, armas, vehículos, insignias y diferentes elementos visuales que buscan darle una identidad propia. Entre las fuerzas representadas se encuentran países como Perú, Argentina, Chile, Ecuador, Brasil, Bolivia, Venezuela y Colombia, creando un escenario alternativo en el que los enfrentamientos militares se desarrollan entre naciones de la región.</p>
-    <p>Uno de los principales atractivos de Conflicto Sur son sus escenarios regionales ficticios. El proyecto incluye mapas ambientados en diferentes entornos de Sudamérica, tanto de día como de noche, diseñados para representar hipotéticos conflictos y operaciones tácticas. De esta manera, el jugador puede experimentar la jugabilidad de Battlefield 2 desde una perspectiva diferente, con escenarios y situaciones inspirados en la geografía y el contexto militar latinoamericano.</p>
-    <p>Otro aspecto importante es el trabajo realizado sobre el equipamiento y las texturas. El mod incorpora modelos y modificaciones visuales que buscan representar uniformes, camuflajes, parches e iconografía relacionados con las fuerzas militares de la región. Estos elementos contribuyen a diferenciar a las distintas facciones y a construir una identidad visual característica del proyecto.</p>
-
+    <p>El mod destaca por incorporar fuerzas armadas latinoamericanas, equipamiento militar adaptado a la región, nuevos camuflajes, armas, vehículos, insignias y diferentes elementos visuales que buscan darle una identidad propia.</p>
     <h3>El trabajo de Miranda Tremy</h3>
     <p>El desarrollo de Conflicto Sur está asociado a Miranda Tremy, también conocido como TremyDsagita, quien publicó avances y contenido relacionado con el proyecto en YouTube bajo el canal @caelmiranda9845.</p>
-    <p>Antes de desarrollar Conflicto Sur, Miranda Tremy ya había adquirido experiencia modificando y adaptando contenido de Battlefield 2. Entre los proyectos y mods en los que trabajó se encuentran AIX2, RUSmarines, DZB2, BATTLE OF HONOR V2.4.2 e Iron Will, especialmente mediante la edición y adaptación de mapas.</p>
-    <p>Ese trabajo previo fue importante para la evolución del proyecto, ya que permitió desarrollar conocimientos y experiencia en modificación de mapas, texturas y diferentes elementos del juego. Posteriormente, esa experiencia desembocó en la creación de un proyecto propio: Conflicto Sur.</p>
-
-    <h3>Evolución del proyecto</h3>
-    <p>El mod tuvo diferentes versiones y actualizaciones, entre ellas 1.2.3, 1.2.6 y 1.2.9, mostrando una evolución progresiva del proyecto. Cada versión representa parte del proceso de desarrollo y perfeccionamiento de la propuesta, incorporando modificaciones y mejoras destinadas a ampliar la experiencia de juego.</p>
-    <p>Más allá de ser simplemente una modificación de Battlefield 2, Conflicto Sur puede considerarse un proyecto de carácter regional dentro de la comunidad de modding del juego. Su principal particularidad es haber tomado la estructura de Battlefield 2 y haberla utilizado como base para construir un universo ficticio centrado específicamente en conflictos militares latinoamericanos.</p>
-
-    <h3>Conclusión</h3>
-    <p>Conflicto Sur representa una propuesta singular dentro del universo de modificaciones de Battlefield 2. Su combinación de facciones latinoamericanas, mapas ficticios inspirados en Sudamérica, equipamiento personalizado, camuflajes y escenarios diurnos y nocturnos le proporciona una identidad diferenciada.</p>
-    <p>El proyecto también refleja el proceso de aprendizaje y evolución de su creador, Miranda Tremy (TremyDsagita), quien previamente worked con otros mods y mapas antes de desarrollar su propia conversión total.</p>
-    <p>En definitiva, Conflicto Sur es un proyecto que busca llevar la experiencia de Battlefield 2 a un escenario poco habitual dentro del modding del juego: una Sudamérica ficticia convertida en escenario de conflictos militares, ofreciendo a los jugadores una perspectiva regional y personalizada del clásico título de DICE.</p>
   </div>
 
-  <!-- 2. GALERÍA DE 15 IMÁGENES -->
+  <!-- 2. GALERÍA -->
   <div class="card">
     <h3 style="text-align: center; margin-top: 0; margin-bottom: 20px; color: #ffca28;">📷 Galería de Capturas del Mod</h3>
     <div class="gallery-grid">
@@ -225,71 +124,44 @@
       <a href="img/foto3.jpg" target="_blank"><img src="img/foto3.jpg" alt="Captura 3" class="gallery-img"></a>
       <a href="img/foto4.jpg" target="_blank"><img src="img/foto4.jpg" alt="Captura 4" class="gallery-img"></a>
       <a href="img/foto5.jpg" target="_blank"><img src="img/foto5.jpg" alt="Captura 5" class="gallery-img"></a>
-      <a href="img/foto6.jpg" target="_blank"><img src="img/foto6.jpg" alt="Captura 6" class="gallery-img"></a>
-      <a href="img/foto7.jpg" target="_blank"><img src="img/foto7.jpg" alt="Captura 7" class="gallery-img"></a>
-      <a href="img/foto8.jpg" target="_blank"><img src="img/foto8.jpg" alt="Captura 8" class="gallery-img"></a>
-      <a href="img/foto9.jpg" target="_blank"><img src="img/foto9.jpg" alt="Captura 9" class="gallery-img"></a>
-      <a href="img/foto10.jpg" target="_blank"><img src="img/foto10.jpg" alt="Captura 10" class="gallery-img"></a>
-      <a href="img/foto11.jpg" target="_blank"><img src="img/foto11.jpg" alt="Captura 11" class="gallery-img"></a>
-      <a href="img/foto12.jpg" target="_blank"><img src="img/foto12.jpg" alt="Captura 12" class="gallery-img"></a>
-      <a href="img/foto13.jpg" target="_blank"><img src="img/foto13.jpg" alt="Captura 13" class="gallery-img"></a>
-      <a href="img/foto14.jpg" target="_blank"><img src="img/foto14.jpg" alt="Captura 14" class="gallery-img"></a>
-      <a href="img/foto15.jpg" target="_blank"><img src="img/foto15.jpg" alt="Captura 15" class="gallery-img"></a>
     </div>
   </div>
 
-  <!-- 3. VIDEO INCRUSTADO DE YOUTUBE -->
+  <!-- 3. VIDEO YOUTUBE -->
   <div class="card" style="text-align: center;">
     <h3 style="margin-top: 0; color: #ffca28;">🎬 Video Demostrativo: Conflicto Sur 1.2.3 Mod</h3>
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-top: 15px;">
-      <iframe 
-        src="https://www.youtube.com/embed/8iMbzhBfCtU" 
-        title="Conflicto Sur 1.2.3 Mod - Battlefield 2" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/8iMbzhBfCtU" title="Conflicto Sur" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
   </div>
 
-  <!-- 4. ENLACE DEL CANAL DE YOUTUBE -->
+  <!-- 4. CANAL YOUTUBE -->
   <div class="card yt-card">
     <h3 style="margin-top:0;">🔴 ¡Apoya el Proyecto!</h3>
-    <p>Suscríbete a mi canal de YouTube, dale "Me Gusta" y deja tus comentarios en los videos. ¡Tu apoyo es fundamental para seguir desarrollando y mejorando el mod de Conflicto Sur!</p>
+    <p>Suscríbete a mi canal de YouTube, dale "Me Gusta" y deja tus comentarios.</p>
     <a href="https://www.youtube.com/@caelmiranda9845" target="_blank" class="yt-btn">▶️ Ir al Canal de YouTube</a>
   </div>
 
   <!-- 5. VISITAS Y LIKES -->
   <div class="card">
-    <p>👀 Visitas: <span id="val-visitas">0</span> | ❤️ Likes: <span id="val-likes">0</span></p>
+    <p>👀 Visitas: <span id="val-visitas">...</span> | ❤️ Likes: <span id="val-likes">...</span></p>
     <button id="btn-like">Dar Me Gusta ❤️</button>
   </div>
 
-  <!-- 6. SECCIÓN DE DESCARGA CON CAPTCHA -->
+  <!-- 6. DESCARGA CON CAPTCHA -->
   <div class="card">
     <h3>Descargar Archivos</h3>
     <p>Resuelve el captcha para desbloquear las opciones de descarga:</p>
-    
-    <!-- NUEVA SITE KEY CONFIGURADA PARA GITHUB PAGES -->
     <div class="g-recaptcha" data-sitekey="6LfJHY0tAAAAAHJpb6F9O__JbSLPByBhXYARGMxB" data-callback="captchaResuelto"></div>
 
     <div id="box-descarga" class="download-box">
       <p>¡Verificación completada con éxito! Selecciona tu versión:</p>
-      
-      <!-- Opción 1: Para Battlefield 2 instalado -->
-      <a href="https://drive.google.com/file/d/1CEFhE_VNMaGfO-jxI_FsZfzvXzopDvYN/view" target="_blank" class="download-btn">
-        📦 Descargar Mod (Para agregar a BF2 instalado)
-      </a>
-
-      <!-- Opción 2: Versión Portable Standalone -->
-      <a href="https://drive.google.com/file/d/1f0fHK1XcDQzFYszrFsfS7FUiKsi6l847/view?pli=1" target="_blank" class="download-btn">
-        🚀 Descargar Versión Portable (No requiere BF2)
-      </a>
+      <a href="https://drive.google.com/file/d/1CEFhE_VNMaGfO-jxI_FsZfzvXzopDvYN/view" target="_blank" class="download-btn">📦 Descargar Mod (Agregar a BF2)</a>
+      <a href="https://drive.google.com/file/d/1f0fHK1XcDQzFYszrFsfS7FUiKsi6l847/view?pli=1" target="_blank" class="download-btn">🚀 Descargar Versión Portable</a>
     </div>
   </div>
 
-  <!-- 7. SECCIÓN DE COMENTARIOS CON ALIAS -->
+  <!-- 7. COMENTARIOS -->
   <div class="card">
     <h3>Comentarios</h3>
     <input type="text" id="txt-alias" placeholder="Tu Nombre o Alias (ej. Soldado123)...">
@@ -304,103 +176,77 @@
     
     const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    // Configuración del Reproductor y Controlador de Volumen
-    const canciones = [
-      'audio/pista1.mp3',
-      'audio/pista2.mp3',
-      'audio/pista3.mp3'
-    ];
+    // Reproductor de Música
+    const canciones = ['audio/pista1.mp3', 'audio/pista2.mp3', 'audio/pista3.mp3'];
     let indiceAudio = 0;
     const reproductor = document.getElementById('reproductor-bg');
     const btnMusica = document.getElementById('btn-musica');
     const volMusica = document.getElementById('vol-musica');
-
-    // Nivel inicial de volumen (50%)
     reproductor.volume = 0.5;
 
     function reproducirPista(index) {
       if (index >= canciones.length) indiceAudio = 0;
       reproductor.src = canciones[indiceAudio];
-      reproductor.play().then(() => {
-        btnMusica.innerText = '🔊 Música';
-      }).catch(() => {
-        btnMusica.innerText = '🔇 Música';
-      });
+      reproductor.play().then(() => { btnMusica.innerText = '🔊 Música'; }).catch(() => { btnMusica.innerText = '🔇 Música'; });
     }
 
-    // Al terminar una pista, pasa a la siguiente
-    reproductor.onended = () => {
-      indiceAudio++;
-      reproducirPista(indiceAudio);
-    };
-
-    // Control manual para reproducir / pausar
+    reproductor.onended = () => { indiceAudio++; reproducirPista(indiceAudio); };
     btnMusica.onclick = (e) => {
       e.stopPropagation();
-      if (!reproductor.src) {
-        reproducirPista(0);
-        return;
-      }
-      if (reproductor.paused) {
-        reproductor.play();
-        btnMusica.innerText = '🔊 Música';
-      } else {
-        reproductor.pause();
-        btnMusica.innerText = '🔇 Música';
-      }
+      if (!reproductor.src) { reproducirPista(0); return; }
+      if (reproductor.paused) { reproductor.play(); btnMusica.innerText = '🔊 Música'; } 
+      else { reproductor.pause(); btnMusica.innerText = '🔇 Música'; }
     };
-
-    // Ajustar el volumen dinámicamente al mover el slider
     volMusica.oninput = (e) => {
       e.stopPropagation();
       reproductor.volume = parseFloat(e.target.value);
-      if (reproductor.volume === 0) {
-        btnMusica.innerText = '🔇 Música';
-      } else if (reproductor.paused) {
-        btnMusica.innerText = '🔇 Música';
-      } else {
-        btnMusica.innerText = '🔊 Música';
-      }
+      btnMusica.innerText = reproductor.volume === 0 ? '🔇 Música' : '🔊 Música';
     };
 
-    volMusica.onclick = (e) => e.stopPropagation();
+    // Variables globales para contadores
+    let numVisitas = 0;
+    let numLikes = 0;
 
-    // Autoplay al interactuar por primera vez con la página
-    document.body.addEventListener('click', () => {
-      if (!reproductor.src) {
-        reproducirPista(0);
-      }
-    }, { once: true });
-
-    // 1. Cargar Estadísticas
+    // 1. Cargar Visitas y Likes
     async function initPagina() {
-      const { data } = await db.from('estadisticas').select('*');
-      if (data) {
-        data.forEach(item => {
-          if (item.id === 'visitas') {
-            document.getElementById('val-visitas').innerText = item.cantidad + 1;
-            db.from('estadisticas').update({ cantidad: item.cantidad + 1 }).eq('id', 'visitas').then();
-          }
-          if (item.id === 'likes') {
-            document.getElementById('val-likes').innerText = item.cantidad;
-          }
-        });
+      try {
+        const { data, error } = await db.from('estadisticas').select('*');
+        if (data && data.length > 0) {
+          data.forEach(item => {
+            const idLimpio = item.id ? item.id.trim() : '';
+            const valor = parseInt(item.cantidad) || 0;
+            
+            if (idLimpio === 'visitas') {
+              numVisitas = valor + 1;
+              document.getElementById('val-visitas').innerText = numVisitas;
+              db.from('estadisticas').update({ cantidad: numVisitas }).eq('id', item.id).then();
+            }
+            if (idLimpio === 'likes') {
+              numLikes = valor;
+              document.getElementById('val-likes').innerText = numLikes;
+            }
+          });
+        }
+      } catch (err) {
+        console.error("Error al cargar estadísticas:", err);
       }
       cargarComentarios();
     }
 
     // 2. Dar Me Gusta
     document.getElementById('btn-like').onclick = async () => {
-      const likesActuales = parseInt(document.getElementById('val-likes').innerText);
-      const nuevoTotal = likesActuales + 1;
-      
-      const { error } = await db.from('estadisticas').update({ cantidad: nuevoTotal }).eq('id', 'likes');
-      if (!error) document.getElementById('val-likes').innerText = nuevoTotal;
+      numLikes++;
+      document.getElementById('val-likes').innerText = numLikes;
+
+      const { error } = await db.from('estadisticas').update({ cantidad: numLikes }).eq('id', 'likes');
+      if (error) {
+        console.error("Error al dar like:", error);
+      }
     };
 
     // 3. Comentarios
     async function cargarComentarios() {
-      const { data } = await db.from('comentarios').select('*').order('creado_en', { ascending: false });
+      const { data, error } = await db.from('comentarios').select('*').order('creado_en', { ascending: false });
       const contenedor = document.getElementById('lista-comentarios');
       contenedor.innerHTML = '';
       if (data && data.length > 0) {
@@ -416,19 +262,21 @@
 
     document.getElementById('btn-comentar').onclick = async () => {
       const alias = document.getElementById('txt-alias').value.trim() || 'Anónimo';
-      const texto = document.getElementById('txt-comentario').value;
-      if (!texto.trim()) return;
+      const texto = document.getElementById('txt-comentario').value.trim();
+      if (!texto) return;
 
-      await db.from('comentarios').insert([{ contenido: texto, autor: alias }]);
-      document.getElementById('txt-comentario').value = '';
-      cargarComentarios();
+      const { error } = await db.from('comentarios').insert([{ contenido: texto, autor: alias }]);
+      if (!error) {
+        document.getElementById('txt-comentario').value = '';
+        cargarComentarios();
+      } else {
+        alert("Error al publicar comentario: " + error.message);
+      }
     };
 
-    // 4. Desbloqueo tras resolver Captcha
+    // 4. Captcha
     function captchaResuelto(token) {
-      if (token) {
-        document.getElementById('box-descarga').style.display = 'block';
-      }
+      if (token) { document.getElementById('box-descarga').style.display = 'block'; }
     }
 
     window.onload = initPagina;
